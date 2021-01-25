@@ -37,5 +37,114 @@ Initialized your environment successfully.
 
 Your project has been successfully initialized and connected to the cloud!
 
+```
+
+# Create DynamoDB Tables :
+
+```sh
+--------------------------------------
+# Create Table "users" in DynamoDB:
+
+$ amplify add storage
+? Please select from one of the below mentioned services: NoSQL Database
+
+Welcome to the NoSQL DynamoDB database wizard
+This wizard asks you a series of questions to help determine how to set up your NoSQL database table.
+
+? Please provide a friendly name for your resource that will be used to label this category in the project: users
+? Please provide table name: users
+
+You can now add columns to the table.
+
+? What would you like to name this column: UserId
+? Please choose the data type: string
+? Would you like to add another column? Yes
+? What would you like to name this column: SignUpDate
+? Please choose the data type: number
+? Would you like to add another column? No
+
+Before you create the database, you must specify how items in your table are uniquely organized. You do this by specifying a primary key. The primary key uniquely identifies each item in the table so that no two items can have the same key. This can be an individual column, or a combination that includes a primary key and a sort key.
+
+To learn more about primary keys, see:
+https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey
+
+? Please choose partition key for the table: UserId
+? Do you want to add a sort key to your table? Yes
+? Please choose sort key for the table: SignUpDate
+
+You can optionally add global secondary indexes for this table. These are useful when you run queries defined in a different column than the primary key.
+To learn more about indexes, see:
+https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.SecondaryIndexes
+
+? Do you want to add global secondary indexes to your table? No
+? Do you want to add a Lambda Trigger for your Table? No
+Successfully added resource users locally
+
+If a user is part of a user pool group, run "amplify update storage" to enable IAM group policies for CRUD operations
+Some next steps:
+"amplify push" builds all of your local backend resources and provisions them in the cloud
+"amplify publish" builds all of your local backend and front-end resources (if you added hosting category) and provisions them in the cloud
+
+# Update the Cloud:
+
+$ amplify push
+✔ Successfully pulled backend environment dev from the cloud.
+Current Environment: dev
+
+| Category | Resource name | Operation | Provider plugin   |
+| -------- | ------------- | --------- | ----------------- |
+| Storage  | users         | Create    | awscloudformation |
+? Are you sure you want to continue? Yes
+⠋ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE DynamoDBTable AWS::DynamoDB::Table
+CREATE_COMPLETE amplify-taskmanagerapp-dev-211629-storageusers-YFR7B256B6I2 AWS::CloudFormation::Stack
+UPDATE_COMPLETE amplify-taskmanagerapp-dev-211629 AWS::CloudFormation::Stack
+CREATE_COMPLETE storageusers                      AWS::CloudFormation::Stack
+
+# Create Table "tasks" in DynamoDB:
+
+$ amplify add storage
+? Please select from one of the below mentioned services: NoSQL Database
+:::::::::::::::::::
+? Please provide a friendly name for your resource that will be used to label this category in the project: tasks
+? Please provide table name: tasks
+
+You can now add columns to the table.
+
+? What would you like to name this column: TaskId
+? Please choose the data type: string
+? Would you like to add another column? Yes
+? What would you like to name this column: CreationDate
+? Please choose the data type: number
+? Would you like to add another column? No
+:::::::::::::::::::
+? Please choose partition key for the table: TaskId
+? Do you want to add a sort key to your table? Yes
+? Please choose sort key for the table: CreationDate
+:::::::::::::::::::
+? Do you want to add global secondary indexes to your table? No
+? Do you want to add a Lambda Trigger for your Table? No
+Successfully added resource tasks locally
+
+# Update the Cloud:
+
+$ amplify push
+✔ Successfully pulled backend environment dev from the cloud.
+Current Environment: dev
+
+| Category | Resource name | Operation | Provider plugin   |
+| -------- | ------------- | --------- | ----------------- |
+| Storage  | tasks         | Create    | awscloudformation |
+| Storage  | users         | No Change | awscloudformation |
+? Are you sure you want to continue? Yes
+⠙ Updating resources in the cloud. This may take a few minutes...
+
+UPDATE_COMPLETE storageusers        AWS::CloudFormation::Stack
+CREATE_COMPLETE amplify-taskmanagerapp-dev-211629-storagetasks-MDDKRH9M4J7V AWS::CloudFormation::Stack
+CREATE_COMPLETE DynamoDBTable       AWS::DynamoDB::Table
+UPDATE_COMPLETE amplify-taskmanagerapp-dev-211629 AWS::CloudFormation::Stack
+UPDATE_COMPLETE storageusers        AWS::CloudFormation::Stack
+CREATE_COMPLETE storagetasks        AWS::CloudFormation::Stack
 
 ```

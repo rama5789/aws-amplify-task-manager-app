@@ -1,0 +1,7 @@
+{
+    "tableName": "users",
+    "partitionKeyName": "UserId",
+    "partitionKeyType": "S",
+    "sortKeyName": "SignUpDate",
+    "sortKeyType": "N"
+}

@@ -1,0 +1,7 @@
+{
+    "tableName": "tasks",
+    "partitionKeyName": "TaskId",
+    "partitionKeyType": "S",
+    "sortKeyName": "CreationDate",
+    "sortKeyType": "N"
+}
