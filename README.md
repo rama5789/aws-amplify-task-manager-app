@@ -167,3 +167,55 @@ UPDATE_COMPLETE storageusers        AWS::CloudFormation::Stack
 CREATE_COMPLETE storagetasks        AWS::CloudFormation::Stack
 
 ```
+
+# Create Lambda Functions :
+
+```sh
+--------------------------------------
+# Create Lambda Functions for "users" and "tasks" in DynamoDB:
+
+# Create Lambda Function "tmaManageTasks":
+
+$ amplify add function
+? Select which capability you want to add: Lambda function (serverless function)
+? Provide an AWS Lambda function name: tmaManageTasks
+? Choose the runtime that you want to use: NodeJS
+? Choose the function template that you want to use: CRUD function for DynamoDB (Integration with API Gateway)
+? Choose a DynamoDB data source option Use DynamoDB table configured in the current Amplify project
+? Choose from one of the already configured DynamoDB tables tasks
+
+Available advanced settings:
+- Resource access permissions
+- Scheduled recurring invocation
+- Lambda layers configuration
+
+? Do you want to configure advanced settings? No
+? Do you want to edit the local lambda function now? Yes
+Please edit the file in your editor: /media/rama/DiskE/MEANStack/Assignments/Orangebits/App/amplify/backend/function/tmaManageTasks/src/app.js
+? Press enter to continue
+Successfully added resource tmaManageTasks locally.
+
+Next steps:
+Check out sample function code generated in <project-dir>/amplify/backend/function/tmaManageTasks/src
+"amplify function build" builds all of your functions currently in the project
+"amplify mock function <functionName>" runs your function locally
+"amplify push" builds all of your local backend resources and provisions them in the cloud
+"amplify publish" builds all of your local backend and front-end resources (if you added hosting category) and provisions them in the cloud
+
+# Create Lambda Function "tmaManageUsers":
+
+$ amplify add function
+? Select which capability you want to add: Lambda function (serverless function)
+? Provide an AWS Lambda function name: tmaManageUsers
+? Choose the runtime that you want to use: NodeJS
+? Choose the function template that you want to use: CRUD function for DynamoDB (Integration with API Gateway)
+? Choose a DynamoDB data source option Use DynamoDB table configured in the current Amplify project
+? Choose from one of the already configured DynamoDB tables users
+::::::::::::::::::
+? Do you want to configure advanced settings? No
+? Do you want to edit the local lambda function now? Yes
+Please edit the file in your editor: /media/rama/DiskE/MEANStack/Assignments/Orangebits/App/amplify/backend/function/tmaManageUsers/src/app.js
+? Press enter to continue
+Successfully added resource tmaManageUsers locally.
+
+```
