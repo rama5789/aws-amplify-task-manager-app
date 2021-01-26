@@ -39,6 +39,25 @@ Your project has been successfully initialized and connected to the cloud!
 
 ```
 
+# Re-Create Deleted Amplify Backend Environment :
+
+```sh
+--------------------------------------
+# Delete All Environments Completely:
+
+$ amplify delete
+
+# Recreate the Environment:
+# remove or empty "team-provider-info.json"
+
+$ amplify init
+
+# Recreate all resources of the Environment:
+
+$ amplify push
+
+```
+
 # Create DynamoDB Tables :
 
 ```sh
