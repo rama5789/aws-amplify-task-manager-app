@@ -271,4 +271,35 @@ Some next steps:
 "amplify push" will build all your local backend resources and provision it in the cloud
 "amplify publish" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
 
+--------------------------------------
+# Update the Cloud:
+
+$ amplify push
+✔ Successfully pulled backend environment dev from the cloud.
+
+Current Environment: dev
+
+| Category | Resource name  | Operation | Provider plugin   |
+| -------- | -------------- | --------- | ----------------- |
+| Api      | tmaApiGw       | Create    | awscloudformation |
+| Function | tmaManageTasks | Update    | awscloudformation |
+| Function | tmaManageUsers | Update    | awscloudformation |
+| Storage  | users          | No Change | awscloudformation |
+| Storage  | tasks          | No Change | awscloudformation |
+? Are you sure you want to continue? Yes
+⠹ Updating resources in the cloud. This may take a few minutes...  
+CREATE_COMPLETE    tmaApiGw                 AWS::ApiGateway::RestApi 
+CREATE_COMPLETE DeploymentAPIGWtmaApiGw     AWS::ApiGateway::Deployment 
+CREATE_COMPLETE amplify-taskmanagerapp-dev-100143-apitmaApiGw-1G17IRDZYV1CP AWS::CloudFormation::Stack
+CREATE_COMPLETE functiontmaManageUsersPermissiontmaApiGw                    AWS::Lambda::Permission   
+CREATE_COMPLETE functiontmaManageTasksPermissiontmaApiGw                    AWS::Lambda::Permission   
+CREATE_COMPLETE apitmaApiGw                       AWS::CloudFormation::Stack 
+UPDATE_COMPLETE amplify-taskmanagerapp-dev-100143 AWS::CloudFormation::Stack 
+UPDATE_COMPLETE storagetasks                      AWS::CloudFormation::Stack 
+UPDATE_COMPLETE storageusers                      AWS::CloudFormation::Stack 
+UPDATE_COMPLETE functiontmaManageTasks            AWS::CloudFormation::Stack 
+✔ All resources are updated in the cloud
+
+REST API endpoint: https://cueu3ltw7c.execute-api.ap-south-1.amazonaws.com/dev
+
 ```
