@@ -77,7 +77,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-taskmanagerapp-dev-100143-deployment",
-          "S3Key": "amplify-builds/tmaManageUsers-7a614c735733724b4533-build.zip"
+          "S3Key": "amplify-builds/tmaManageUsers-4f785951546e55635a6b-build.zip"
         }
       }
     },
