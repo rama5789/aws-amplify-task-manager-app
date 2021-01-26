@@ -1,0 +1,54 @@
+{
+    "paths": [
+        {
+            "name": "/tasks",
+            "lambdaFunction": "tmaManageTasks",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/tasks"
+        },
+        {
+            "name": "/users",
+            "lambdaFunction": "tmaManageUsers",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/users"
+        }
+    ],
+    "resourceName": "tmaApiGw",
+    "apiName": "tmaApiGw",
+    "functionArns": [
+        {
+            "lambdaFunction": "tmaManageTasks"
+        },
+        {
+            "lambdaFunction": "tmaManageUsers"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-taskmanagerapp-dev-100143-authRole",
+        "unAuthRoleName": "amplify-taskmanagerapp-dev-100143-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "tmaManageTasks",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "tmaManageUsers",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

@@ -246,3 +246,29 @@ UPDATE_COMPLETE storagetasks            AWS::CloudFormation::Stack
 ✔ All resources are updated in the cloud
 
 ```
+# Create API Gateway :
+
+```sh
+--------------------------------------
+# Create API Gateway "tmaApiGw" for Lambda Functions:
+
+$ amplify add api
+? Please select from one of the below mentioned services: REST
+? Provide a friendly name for your resource to be used as a label for this category in the project: tmaApiGw
+? Provide a path (e.g., /book/{isbn}): /tasks
+? Choose a Lambda source Use a Lambda function already added in the current Amplify project
+? Choose the Lambda function to invoke by this path tmaManageTasks
+? Restrict API access No
+? Do you want to add another path? Yes
+? Provide a path (e.g., /book/{isbn}): /users
+? Choose a Lambda source Use a Lambda function already added in the current Amplify project
+? Choose the Lambda function to invoke by this path tmaManageUsers
+? Restrict API access No
+? Do you want to add another path? No
+Successfully added resource tmaApiGw locally
+
+Some next steps:
+"amplify push" will build all your local backend resources and provision it in the cloud
+"amplify publish" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
+
+```
