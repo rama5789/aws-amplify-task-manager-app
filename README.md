@@ -218,4 +218,31 @@ Please edit the file in your editor: /media/rama/DiskE/MEANStack/Assignments/Ora
 ? Press enter to continue
 Successfully added resource tmaManageUsers locally.
 
+--------------------------------------
+# Update the Cloud:
+
+$ amplify push
+✔ Successfully pulled backend environment dev from the cloud.
+Current Environment: dev
+
+| Category | Resource name  | Operation | Provider plugin   |
+| -------- | -------------- | --------- | ----------------- |
+| Function | tmaManageTasks | Create    | awscloudformation |
+| Function | tmaManageUsers | Create    | awscloudformation |
+| Storage  | users          | No Change | awscloudformation |
+| Storage  | tasks          | No Change | awscloudformation |
+? Are you sure you want to continue? Yes
+⠹ Updating resources in the cloud. This may take a few minutes...
+CREATE_COMPLETE LambdaExecutionRole     AWS::IAM::Role
+CREATE_COMPLETE LambdaFunction          AWS::Lambda::Function
+CREATE_COMPLETE lambdaexecutionpolicy   AWS::IAM::Policy
+CREATE_COMPLETE amplify-taskmanagerapp-dev-100143-functiontmaManageUsers-1IXAKBOEN83WG AWS::CloudFormation::Stack
+CREATE_COMPLETE amplify-taskmanagerapp-dev-100143-functiontmaManageTasks-4DI9TIZMMAXP AWS::CloudFormation::Stack
+CREATE_COMPLETE functiontmaManageUsers  AWS::CloudFormation::Stack
+CREATE_COMPLETE functiontmaManageTasks  AWS::CloudFormation::Stack
+UPDATE_COMPLETE amplify-taskmanagerapp-dev-100143 AWS::CloudFormation::Stack
+UPDATE_COMPLETE storageusers            AWS::CloudFormation::Stack
+UPDATE_COMPLETE storagetasks            AWS::CloudFormation::Stack
+✔ All resources are updated in the cloud
+
 ```
