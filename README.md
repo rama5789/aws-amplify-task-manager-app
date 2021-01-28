@@ -303,3 +303,58 @@ UPDATE_COMPLETE functiontmaManageTasks            AWS::CloudFormation::Stack
 REST API endpoint: https://cueu3ltw7c.execute-api.ap-south-1.amazonaws.com/dev
 
 ```
+
+# Create Cognito UserPool and IdentityPool :
+
+```sh
+--------------------------------------
+# Create Cognito Pools:
+
+$ amplify add auth
+Using service: Cognito, provided by: awscloudformation
+ 
+ The current configured provider is Amazon Cognito. 
+ 
+ Do you want to use the default authentication and security configuration? Default configuration
+ Warning: you will not be able to edit these selections. 
+ How do you want users to be able to sign in? Email
+ Do you want to configure advanced settings? No, I am done.
+Successfully added auth resource taskmanagerappefc08aac locally
+
+--------------------------------------
+# Update the Cloud:
+
+$ amplify push
+✔ Successfully pulled backend environment dev from the cloud.
+Current Environment: dev
+
+| Category | Resource name          | Operation | Provider plugin   |
+| -------- | ---------------------- | --------- | ----------------- |
+| Auth     | taskmanagerappefc08aac | Create    | awscloudformation |
+| Function | tmaManageTasks         | Update    | awscloudformation |
+| Storage  | users                  | No Change | awscloudformation |
+| Storage  | tasks                  | No Change | awscloudformation |
+| Function | tmaManageUsers         | No Change | awscloudformation |
+| Api      | tmaApiGw               | No Change | awscloudformation |
+? Are you sure you want to continue? Yes
+⠇ Updating resources in the cloud. This may take a few minutes...
+
+CREATE_COMPLETE UpdateRolesWithIDPFunctionRole AWS::IAM::Role
+CREATE_COMPLETE SNSRole             AWS::IAM::Role
+CREATE_COMPLETE UserPool            AWS::Cognito::UserPool       
+CREATE_COMPLETE UserPoolClient      AWS::Cognito::UserPoolClient 
+CREATE_COMPLETE UserPoolClientWeb   AWS::Cognito::UserPoolClient 
+CREATE_COMPLETE UserPoolClientRole  AWS::IAM::Role 
+CREATE_COMPLETE UserPoolClientLambda    AWS::Lambda::Function 
+CREATE_COMPLETE UserPoolClientLambdaPolicy  AWS::IAM::Policy 
+CREATE_COMPLETE UserPoolClientLogPolicy     AWS::IAM::Policy 
+CREATE_COMPLETE UserPoolClientInputs    Custom::LambdaCallout      
+CREATE_COMPLETE IdentityPool    AWS::Cognito::IdentityPool 
+CREATE_COMPLETE IdentityPoolRoleMap     AWS::Cognito::IdentityPoolRoleAttachment 
+CREATE_COMPLETE amplify-taskmanagerapp-dev-100143-authtaskmanagerappefc08aac-ZBWP5OWZ34DU AWS::CloudFormation::Stack 
+CREATE_COMPLETE authtaskmanagerappefc08aac  AWS::CloudFormation::Stack 
+CREATE_COMPLETE UpdateRolesWithIDPFunction        AWS::Lambda::Function 
+CREATE_COMPLETE UpdateRolesWithIDPFunctionOutputs Custom::LambdaCallout 
+UPDATE_COMPLETE amplify-taskmanagerapp-dev-100143 AWS::CloudFormation::Stack 
+
+```

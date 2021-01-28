@@ -72,5 +72,13 @@
         }
       ]
     }
+  },
+  "auth": {
+    "taskmanagerappefc08aac": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
   }
 }

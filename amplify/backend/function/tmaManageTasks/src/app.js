@@ -12,12 +12,12 @@ const bodyParser = require('body-parser');
 const express = require('express');
 
 // local
-AWS.config.update({
+/* AWS.config.update({
   region: 'local',
   endpoint: 'http://localhost:8000',
-});
+}); */
 // cloud
-// AWS.config.update({ region: process.env.TABLE_REGION });
+AWS.config.update({ region: process.env.TABLE_REGION });
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
