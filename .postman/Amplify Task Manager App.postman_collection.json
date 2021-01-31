@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "39d1ecbc-3661-4dd9-80d6-18563cb53cc4",
+		"name": "Amplify Task Manager App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Get Task by TaskId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tasks/ca288465-92a2-4023-8aff-69b5d9a9860c",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tasks",
+								"ca288465-92a2-4023-8aff-69b5d9a9860c"
+							]
+						},
+						"description": "GET /tasks/:TaskId"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Task by TaskId and CreationDate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tasks/object/ca288465-92a2-4023-8aff-69b5d9a9860c/1611677427410",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tasks",
+								"object",
+								"ca288465-92a2-4023-8aff-69b5d9a9860c",
+								"1611677427410"
+							]
+						},
+						"description": "GET /tasks/object/:TaskId/:CreationDate"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tasks",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tasks"
+							]
+						},
+						"description": "GET /tasks"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Task by TaskId and CreationDate",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tasks/object/1/121212121212",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tasks",
+								"object",
+								"1",
+								"121212121212"
+							]
+						},
+						"description": "DELETE /tasks/object/:TaskId/:CreationDate"
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new Task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\": \"Task One\",\n    \"Description\": \"Desc for Task One\",\n    \"UserId\": \"user1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tasks",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Task by TaskId and CreationDate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"TaskId\": \"ca288465-92a2-4023-8aff-69b5d9a9860c\",\n    \"CreationDate\": 1611677427410,\n    \"TaskStatus\": \"In Progress\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tasks",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tasks"
+							]
+						},
+						"description": "PUT /tasks"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:3000"
+		}
+	]
+}
